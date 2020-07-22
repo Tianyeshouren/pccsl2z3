@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 
 public class testfo {
     public static void main(String[] args) throws IOException, InterruptedException {
-        int bd = 15;
+        int bd = 20;
         String sourceFileName = "ccsl.txt";
         String ccslspec =  readSourceCode(sourceFileName);
         pccslLexer lexer = new pccslLexer(CharStreams.fromString(ccslspec));

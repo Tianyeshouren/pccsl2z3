@@ -87,11 +87,11 @@ public class delcon implements  ccslcon {
             sb.append("ForAll([x],Implies(And(x>=1,x<=b+1),Implies(H"+consclock1+"(x)-"+low+"<=0,H"+defclock+"(x)== 0 )))");
             z.global_def.add(sb.toString());
         }
-        else if(!(low == high) &&consclock1.equals(consclock2)) {
+        else if(!(low == high) && consclock1.equals(consclock2)) {
             z.Initdec.add(par+" = Int(\'"+par+"\')");
             z.global_def.add("And("+par+"<="+high+","+par+">="+low+")");
 
-            sb.append("ForAll([x],Implies(And(x>=1,x<=b+1),Implies(H"+consclock1+"(x)-"+par+">0,H"+defclock+"(x)==H"+consclock1+"(x) - "+low+")))");
+            sb.append("ForAll([x],Implies(And(x>=1,x<=b+1),Implies(H"+consclock1+"(x)-"+par+">0,H"+defclock+"(x)==H"+consclock1+"(x) - "+par+")))");
             z.global_def.add(sb.toString());
             sb.delete(0, sb.length());
             sb.append("ForAll([x],Implies(And(x>=1,x<=b+1),Implies(H"+consclock1+"(x)-"+par+"<=0,H"+defclock+"(x)== 0 )))");
@@ -100,7 +100,6 @@ public class delcon implements  ccslcon {
         else if(!(low == high) && !consclock1.equals(consclock2)) {
             z.Initdec.add(par+" = Int(\'"+par+"\')");
             z.global_def.add("And("+par+"<="+high+","+par+">="+low+")");
-
             sb.append("ForAll([x],Implies(And(x>=1,x<=b),(T"+defclock+"(x) == And(T"+consclock2+"(x),Exists(m,And(m>=1,m<=x,T"+consclock1+"(m),H"+consclock2+"(x)-H"+consclock2+"(m) == "+par+"))))))");
             z.global_def.add(sb.toString());
         }

@@ -1,3 +1,10 @@
-c1 <= IC ;
-p2 = IC P 4 with 3
+T1f <= T2s;
+T2f [4]< T1s;
+T1s = IC P i and 5<=i<=5;
+d2 = IC $ r on IC and 0<=r<=10;
+T2s = d2 P h and 8<=h<=8;
+T1f = T1s $ g on IC and 2<=g<=2;
+T2f = T2s $ k on IC and 6<=k<=6;
+c1 <= IC;
+
 
